@@ -1,7 +1,19 @@
-[ ] Functionality to register: POST/signup
+[ X ] Functionality to register: POST/signup
     - Create a User model
     - Router: post / signup
     - read info from 'req.body' const {email, username, password} = req.body
     - Create the HASH
     - User.create({email, HASH})
     - res.json
+
+[ x ] Functionality to LOGIN:
+    - Router
+    - req.body --> 
+    - get use details from DB: user.findOne({email: email})
+    - check if the password is correct: "bcrypt.comparreSync(password, hashFromDB)"
+        -res.json()
+        -res.status(403).json()
+
+
+[  ] TOKE AUTHENTICATION:
+        JWT 
