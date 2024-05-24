@@ -26,11 +26,16 @@ router.post("/signup", (req, res, next) => {
   }
 
   User.create(newUser)
-    .then( newUser => {
-      res.status(201).json("User created successfully", newUser)
+    .then( createdUser => {
+
+      const {email, name, _id} = createdUser;
+
+      const user = { email, name, _id };
+
+      res.status(201).json({ user: user });
     })
     .catch(err => {
-      console.log("Error creating new user:", error);
+      console.log("Error creating new user:", err);
       res.status(500).json({message: "Error creating user"});
     })
 
