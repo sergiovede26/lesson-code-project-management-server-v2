@@ -10,11 +10,14 @@ require("./config")(app);
 const allRoutes = require("./routes");
 app.use("/api", allRoutes);
 
-const projectRouter = require("./routes/project.routes");
-app.use("/api", projectRouter);
 
-const taskRouter = require("./routes/task.routes");
-app.use("/api", taskRouter);
+
+//👇 Mounting routes
+app.use("/auth", require("./routes/auth.routes"));
+app.use("/api", require("./routes/project.routes"));
+app.use("/api", require("./routes/task.routes"));
+
+
 
 require("./error-handling")(app);
 

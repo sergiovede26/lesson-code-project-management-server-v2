@@ -1,0 +1,7 @@
+[ ] Functionality to register: POST/signup
+    - Create a User model
+    - Router: post / signup
+    - read info from 'req.body' const {email, username, password} = req.body
+    - Create the HASH
+    - User.create({email, HASH})
+    - res.json
